@@ -45,16 +45,7 @@
 			<h2 class="my-3 text-center">Open Positions</h2>
 			<div class="my-3">
 				{% for job_listing in data %}
-					<div class="my-3 border-bottom py-3 d-flex justify-content-md-between">
-						<div mx-5>
-							<h3>{{job_listing['title']}}</h3>
-							<p>Location: {{job_listing['location']}}</p>
-							{% if 'salary' in job_listing %}
-							<p>Salary: {{job_listing['salary']}}</p>
-							{% endif %}
-						</div>
-						<button class="btn btn-outline-primary">Apply Now</button>
-					</div>
+					{% include 'job_listing_renderer.html' %}
 				{% endfor %}
 			</div>
 			<div class="my-3 text-center">
