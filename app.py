@@ -39,9 +39,36 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+jobs = [
+    {
+        "id": 1,
+        "title": "Data Analyst",
+        "location": "Bengaluru, India",
+        "salary": "INR 10,00,000",
+    },
+    {
+        "id": 2,
+        "title": "Data Scientist",
+        "location": "Noida, India",
+        "salary": "INR 12,00,000",
+    },
+    {
+        "id": 3,
+        "title": "Frontend Engineer",
+        "location": "Remote",
+        "salary": "INR 15,00,000",
+    },
+    {
+        "id": 4,
+        "title": "Backend Engineer",
+        "location": "San Francisco, USA",
+        "salary": "$ 120,000",
+    }
+]
+
 @app.route("/")
 def home_page():
-    return render_template("home.html")
+    return render_template("home.html", data=jobs, company="Kickstart Career")
 
 
 if __name__ == "__main__":
