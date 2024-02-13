@@ -1,5 +1,4 @@
-# print("Hello World!")
-
+"""
 # import Flask class from flask module
 from flask import Flask
 
@@ -24,6 +23,16 @@ def hello_world():
 The above function will be executed for the route mentioned in the
 decorator immediately above it
 '''
+"""
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def render_html():
+    return render_template("home.html")
 
 if __name__ == "__main__":
     app.run(host = '0.0.0.0', debug=True)
+
